@@ -4,7 +4,6 @@ module Lib
 
 import Dom1
 import Data.Matrix
-import Data.Either
 
 someFunc :: IO ()
 someFunc = print (naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-2,-1,1] [2,-1,1] [2,1,1] [-2,1,1])
@@ -36,15 +35,5 @@ naivnoProjPresl t1 t2 t3 t4 t5 t6 t7 t8 =
     where   inverz = inverse (naivnoKanonskoProjPresl t1 t2 t3 t4)
             p2 = naivnoKanonskoProjPresl t5 t6 t7 t8
 
-
-
-
-
-
-
-
-{- naivnoKanonskoProjPresl [1,2,3] [3,2,1] [0,1,1] [7,11,10] -}
 {- primer zadatak:
     naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-2,-1,1] [2,-1,1] [2,1,1] [-2,1,1] -}
-{- ista tacka u istu
-    naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] -} 
