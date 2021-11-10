@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module Lib
     {- ( someFunc
     ) -} where
@@ -8,7 +9,7 @@ import Data.Matrix
 someFunc :: IO ()
 someFunc = print (naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-2,-1,1] [2,-1,1] [2,1,1] [-2,1,1])
 
-napraviMatUKol :: [a] -> [a] -> [a] -> Matrix a
+napraviMatUKol :: (Num a) => [a] -> [a] -> [a] -> Matrix a
 napraviMatUKol t1 t2 t3 = transpose $ fromLists [t1, t2, t3]
 
 nadjiLambda :: (Ord a, Fractional a) => Matrix a -> Matrix a -> a
@@ -39,3 +40,10 @@ naivnoProjPresl t1 t2 t3 t4 t5 t6 t7 t8 =
     naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-2,-1,1] [2,-1,1] [2,1,1] [-2,1,1] -}
 
 
+{- DLT -}
+
+
+napraviMat2x9 :: (Num a) => [a] -> [a] -> Matrix a
+napraviMat2x9 x [x1p,x2p,x3p] = fromLists [prviRed, drugiRed]
+    where   prviRed  = [0,0,0] ++ [(-x3p)*i | i <- x] ++ [x2p*i | i <- x]
+            drugiRed = [x3p*i | i <- x] ++ [0,0,0] ++ [(-x1p)*i | i <- x]
