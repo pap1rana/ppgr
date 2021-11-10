@@ -3,4 +3,5 @@
 sudo apt-get install stack
 
 compiled:    stack run
+
 interpreted: stack ghci
