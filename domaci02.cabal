@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Dlt
       Dom1
       Lib
   other-modules:
@@ -33,7 +34,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
-    , either
+    , hmatrix
     , matrix
   default-language: Haskell2010
 
@@ -47,7 +48,7 @@ executable domaci02-exe
   build-depends:
       base >=4.7 && <5
     , domaci02
-    , either
+    , hmatrix
     , matrix
   default-language: Haskell2010
 
@@ -62,6 +63,6 @@ test-suite domaci02-test
   build-depends:
       base >=4.7 && <5
     , domaci02
-    , either
+    , hmatrix
     , matrix
   default-language: Haskell2010
