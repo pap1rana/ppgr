@@ -30,6 +30,7 @@ matProjPreslDLT m = reshape 1 (flatten $ dropColumns (cols vT-1) vT)
 dlt :: Field a => [[a]] -> [[a]] -> Matrix a
 dlt l lp = matProjPreslDLT $ spojiMatDLT (generisiSve2x9 l lp)
 
+formatDLT :: (Element t, Ord t, Fractional t) => Matrix t -> Matrix t
 formatDLT m = reshape 3 (fromList $ map zaokruzi (toList $ flatten m))
     where zaokruzi = \x -> if x<0.001 && x>(-0.001) then 0 else x
 

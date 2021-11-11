@@ -9,7 +9,7 @@ import Data.Matrix
 someFunc :: IO ()
 someFunc = print (naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-2,-1,1] [2,-1,1] [2,1,1] [-2,1,1])
 
-napraviMatUKol :: (Num a) => [a] -> [a] -> [a] -> Data.Matrix.Matrix a
+napraviMatUKol :: (Num a) => [a] -> [a] -> [a] -> Matrix a
 napraviMatUKol t1 t2 t3 = transpose $ fromLists [t1, t2, t3]
 
 nadjiLambda :: (Ord a, Fractional a) => Matrix a -> Matrix a -> a
