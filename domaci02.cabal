@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Dlt
+      DltNorm
       Dom1
       Lib
   other-modules:
