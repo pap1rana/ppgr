@@ -1,7 +1,5 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-module Dlt
-where
-{---------- DLT ------------}
+module Dlt where
 import Numeric.LinearAlgebra
 
 {- napraviMat2x9 [1,2,3] [4,5,6] -}
@@ -23,7 +21,7 @@ spojiMatDLT l  = head l === spojiMatDLT (tail l)
 {- poslednji kolona vT je nasa matrica-}
 matProjPreslDLT :: (Field a) => Matrix a -> Matrix a
 matProjPreslDLT m = reshape 1 (flatten $ dropColumns (cols vT-1) vT)
-    where (u,d,vT) = svd m
+    where   (u,d,vT) = svd m
 
 
 {- dlt [a,b,c,d..] [ap,bp,cp,dp..]-}
@@ -32,7 +30,7 @@ dlt l lp = matProjPreslDLT $ spojiMatDLT (generisiSve2x9 l lp)
 
 formatDLT :: (Element t, Ord t, Fractional t) => Matrix t -> Matrix t
 formatDLT m = reshape 3 (fromList $ map zaokruzi (toList $ flatten m))
-    where zaokruzi = \x -> if x<0.001 && x>(-0.001) then 0 else x
+    where   zaokruzi = \x -> if x<0.001 && x>(-0.001) then 0 else x
 
 {- primer sa predavanja i provera da li je x'=p*x tj x' vekt px = 0  
         x   = [1,2,3]

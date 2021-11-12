@@ -6,7 +6,6 @@ import Prelude hiding ((<>))
 prosek :: [Double] -> Double
 prosek l = sum l / fromIntegral (length l)
 
-{- [t1,t2..] -> c -}
 nadjiTeziste :: [[Double]] -> [Double]
 nadjiTeziste tacke = [prosekX, prosekY, prosekZ]
     where   prosekX = prosek $ map head tacke
@@ -16,8 +15,6 @@ nadjiTeziste tacke = [prosekX, prosekY, prosekZ]
 matTranDo00 :: [Double] -> Matrix Double
 matTranDo00 [x,y,_] = col [1,0,0] ||| col [0,1,0] ||| col [-x,-y,1]
 
-
-{- tacka -> rast -}
 rastOd00 :: [Double] -> Double
 rastOd00 [x,y,_] = sqrt $ x^2 + y^2
 
@@ -25,10 +22,8 @@ rastProsecno :: [[Double]] -> Double
 rastProsecno l = prosek $ map rastOd00 l
 
 matSkalRastPros :: Double -> [[Double]] -> Matrix Double
-{- matSkalRastPros koliko l = col [lambda,0,0] ||| col [0,lambda,0] ||| col [0,0,1] -}
 matSkalRastPros koliko l = diag $ fromList [lambda,lambda,1]
     where   lambda = koliko / rastProsecno l
-
 
 matNorm :: [[Double]] -> Matrix Double
 matNorm lt = s <> g
@@ -36,13 +31,11 @@ matNorm lt = s <> g
             s = matTranDo00 (nadjiTeziste lt)
             transliraneTacke = map (((toList . flatten) . (s<>)) . col) lt
 
-
 tranTacke :: Matrix Double -> [[Double]] -> [[Double]]
 tranTacke m = map (((toList . flatten) . (m<>)) . col)
 
 normTacke :: [[Double]] -> [[Double]]
 normTacke lt = tranTacke (matNorm lt) lt
-
 
 izjednaciMatPoPoz :: Int -> Int -> Matrix Double -> Matrix Double -> Matrix Double
 izjednaciMatPoPoz v k m1 m2 = reshape 3 m2p
