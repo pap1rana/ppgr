@@ -36,4 +36,16 @@ matNorm lt = s <> g
             transliraneTacke = map (((toList . flatten) . (s<>)) . col) lt
 
 
+tranTacke :: Matrix Double -> [[Double]] -> [[Double]]
+tranTacke m = map (((toList . flatten) . (m<>)) . col)
 
+normTacke :: [[Double]] -> [[Double]]
+normTacke lt = tranTacke (matNorm lt) lt
+
+{- 
+    xs      = [[1,1,1],[5,2,1],[6,4,1],[-1,7,1]]
+    xps     = [[0,0,1],[10,0,1],[10,5,1],[0,5,1]]
+    mdlt    = dlt xs xps
+    mdltn   = dlt (normTacke xs) (normTacke xps)
+
+ -}
