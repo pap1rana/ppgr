@@ -17,7 +17,6 @@ nadjiLambda m1 m2 = detLaplace m1 / detLaplace m2
 
 {- nadjiLamba i pomnozi sa -}
 pomnoziLambda :: (Ord a, Fractional a) => Matrix a -> Matrix a -> [a] -> [a]
-{- pomnoziLambda m1 m2 = map (nadjiLambda m1 m2 *)-}
 pomnoziLambda m1 m2 = map (nadjiLambda m1 m2 *)
 
 {- kolona(i) = lamda(i) * t(i) = det / det(i) -}
