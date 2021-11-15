@@ -1,6 +1,5 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-module Dom1
-where
+module Dom1 where
 
 data Tacka = MkTacka    { x1 :: Double
                         , x2 :: Double

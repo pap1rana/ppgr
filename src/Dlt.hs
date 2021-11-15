@@ -1,5 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module Dlt where
+    
 import Numeric.LinearAlgebra
 
 {- napraviMat2x9 [1,2,3] [4,5,6] -}

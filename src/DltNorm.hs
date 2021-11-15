@@ -1,5 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module DltNorm where
+    
 import Numeric.LinearAlgebra
 import Prelude hiding ((<>))
 

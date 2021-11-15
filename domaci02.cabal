@@ -29,6 +29,7 @@ library
       DltNorm
       Dom1
       Lib
+      Naive
   other-modules:
       Paths_domaci02
   hs-source-dirs:
