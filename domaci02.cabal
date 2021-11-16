@@ -27,7 +27,6 @@ library
   exposed-modules:
       Dlt
       DltNorm
-      Dom1
       Lib
       Naive
   other-modules:

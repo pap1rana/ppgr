@@ -1,8 +1,9 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module DltNorm where
-    
+
 import Numeric.LinearAlgebra
 import Prelude hiding ((<>))
+import Dlt (dlt, formatDLT)
 
 prosek :: [Double] -> Double
 prosek l = sum l / fromIntegral (length l)
@@ -37,6 +38,13 @@ tranTacke m = map (((toList . flatten) . (m<>)) . col)
 
 normTacke :: [[Double]] -> [[Double]]
 normTacke lt = tranTacke (matNorm lt) lt
+
+
+dltMod :: [[Double]] -> [[Double]] -> Matrix Double
+dltMod orig slike = inv (matNorm slike) <> (formatDLT (dlt normOrig normSlike)  <> matNorm orig)
+    where   normOrig  = normTacke orig
+            normSlike = normTacke slike
+
 
 izjednaciMatPoPoz :: Int -> Int -> Matrix Double -> Matrix Double -> Matrix Double
 izjednaciMatPoPoz v k m1 m2 = reshape 3 m2p

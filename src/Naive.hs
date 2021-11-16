@@ -23,7 +23,7 @@ naivnoKanonskoProjPresl t1 t2 t3 t4 = napraviMatUKol lA lB lC
 naivnoProjPresl :: [Double] -> [Double] -> [Double] -> [Double] -> [Double] -> [Double] -> [Double] -> [Double] -> Matrix Double
 naivnoProjPresl t1 t2 t3 t4 t5 t6 t7 t8 = p2 <> p1
     where   p1 = inv (naivnoKanonskoProjPresl t1 t2 t3 t4)
-            p2 = naivnoKanonskoProjPresl t5 t6 t7 t8    
+            p2 = naivnoKanonskoProjPresl t5 t6 t7 t8
 
 {- primer:
     naivnoProjPresl [-3,-1,1] [3,-1,1] [1,1,1] [-1,1,1] [-2,-1,1] [2,-1,1] [2,1,1] [-2,1,1] 

@@ -26,8 +26,8 @@ matProjPreslDLT m = reshape 1 (flatten $ dropColumns (cols vT-1) vT)
 
 
 {- dlt [a,b,c,d..] [ap,bp,cp,dp..]-}
-dlt :: Field a => [[a]] -> [[a]] -> Matrix a
-dlt l lp = matProjPreslDLT $ spojiMatDLT (generisiSve2x9 l lp)
+dlt :: (Element a, Field a, Ord a) => [[a]] -> [[a]] -> Matrix a
+dlt l lp = formatDLT $ matProjPreslDLT $ spojiMatDLT (generisiSve2x9 l lp)
 
 formatDLT :: (Element t, Ord t, Fractional t) => Matrix t -> Matrix t
 formatDLT m = reshape 3 (fromList $ map zaokruzi (toList $ flatten m))
