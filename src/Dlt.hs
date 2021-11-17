@@ -31,7 +31,7 @@ dlt l lp = formatDLT $ matProjPreslDLT $ spojiMatDLT (generisiSve2x9 l lp)
 
 formatDLT :: (Element t, Ord t, Fractional t) => Matrix t -> Matrix t
 formatDLT m = reshape 3 (fromList $ map zaokruzi (toList $ flatten m))
-    where   zaokruzi = \x -> if x<0.001 && x>(-0.001) then 0 else x
+    where   zaokruzi = \x -> if x<0.0000001 && x>(-0.000001) then 0 else x
 
 {- primer sa predavanja i provera da li je x'=p*x tj x' vekt px = 0  
         x   = [1,2,3]

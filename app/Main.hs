@@ -2,6 +2,23 @@
 module Main where
 
 import Lib
+import System.Environment
+import Numeric.LinearAlgebra(loadMatrix, saveMatrix, toLists)
+import Dlt (dlt)
+import Naive (naivnoProjPresl)
+
+{- main :: IO ()
+main = someFunc
+ -}
+
 
 main :: IO ()
-main = someFunc
+main = do
+    m <- loadMatrix "tacke.txt"
+    let o = take 4 $ toLists m
+    let s = drop 4 $ toLists m
+{-     let matricaPreslikavanja = dlt o s -}
+    let matricaPreslikavanja = naivnoProjPresl (o!!0) (o!!1) (o!!2) (o!!3) (s!!0) (s!!1) (s!!2) (s!!3) 
+    saveMatrix  "matPreslikavanja.txt" "%.5f" matricaPreslikavanja
+
+    

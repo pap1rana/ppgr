@@ -6,8 +6,12 @@ import Naive (naivnoProjPresl)
 import Dlt 
 import DltNorm 
 
+{- 
 someFunc :: IO ()
-someFunc = print ()
+someFunc = print (naivnoProjPresl y1 y2 y3 y4 y1p y2p y3p y4p) 
+-}
+someFunc :: String
+someFunc = show (naivnoProjPresl y1 y2 y3 y4 y1p y2p y3p y4p)
 
 
 skalMatDaPrvi1 :: Matrix Double -> Matrix Double

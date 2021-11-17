@@ -35,9 +35,9 @@ packages:
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
 #
-extra-deps:
-- opencv-0.0.2.1@sha256:76d385c2be81c84c0c81e1cbfc275ac145510ced0c87fc81d619ccf58233e603,8362
-- repa-3.4.1.4@sha256:df02acc0f65be7ff67cf71058841644425337c5ebd44c95b1ac1564a1e3c4858,3323   
+#extra-deps:
+#- opencv-0.0.2.1@sha256:76d385c2be81c84c0c81e1cbfc275ac145510ced0c87fc81d619ccf58233e603,8362
+#- repa-3.4.1.4@sha256:df02acc0f65be7ff67cf71058841644425337c5ebd44c95b1ac1564a1e3c4858,3323   
 #- git: https://github.com/LumiGuide/haskell-opencv.git
 #  commit: 07afde39fa16f7a4282d4a812e70b9ed33d0f3ef
 #
