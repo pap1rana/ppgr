@@ -2,4 +2,11 @@
 *~
 *.txt
 *.jpg
-.gitgnore
+.gitignore
+dist-*
+.ghc.env*
+cabal.project.*
+*.md
+domaci02.cabal
+LICENSE
+stack.yaml*

@@ -20,6 +20,8 @@ try:
 except:
     print("greska pri ucitavanju slike")
 
+#TODO: uhvati samo dve koord slike i transformisi 
+
 try:
     with open("tacke.txt", "w") as f:
         for tacka in klikovi:
@@ -36,12 +38,17 @@ try:
     cv2.waitKey(2000)
     m = np.genfromtxt("matPreslikavanja.txt")
     print(m)
-    sredjena = cv2.warpPerspective(slika, m, (1920, 980))
+except:
+    print("greska pri ucitavanju matrice")
+
+try:
+    h, w, _ = slika.shape
+    sredjena = cv2.warpPerspective(slika, m, (w, h))
     cv2.namedWindow("sredjena")
     while True:
         cv2.imshow("sredjena", sredjena)
         key = cv2.waitKey(1) & 0xFF
         if key == ord("c"):
-            break 
+            break
 except:
-    print("greska pri ucitavanju matrice")
+    print("warpPerspective fail")
